@@ -1,3 +1,29 @@
+void createFromTail(TList& head)
+{
+	init(head);
+	TList tail=head;
+	int n;
+	cout << "Введите кол-во элементов: ";
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		int elem;
+		cout << endl << "Введите элемент: ";
+		cin >> elem;
+		if (isEmpty(head))
+		{
+			addToHead(head, elem);
+			tail = head;
+		}
+		else
+		{
+			addAfterNode(tail, elem);
+			tail = tail->next;
+		}
+	}
+}
+
+
 void mergingLists(TList& M1, TList& M2) { //Передаём в функцию 2 списка
 	TList p = M1; //Ставим указатели на первый эл-т каждого списка
 	TList q = M2; 
